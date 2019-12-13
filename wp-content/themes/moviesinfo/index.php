@@ -17,12 +17,10 @@
 
 				</div>
 
-
 				<!--Sidebar here-->
-				<?php get_sidebar(); ?>
+				<?php dynamic_sidebar( 'main-sidebar' ); ?>
 
-
-			</div>
+            </div>
 		</div>
 	</div>
 </section>
