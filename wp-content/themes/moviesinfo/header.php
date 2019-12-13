@@ -14,13 +14,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="header_top">
-				<div class="col-md-2">
-					<div class="logo_img">
+				<div class="col-md-1">
+					<div class="logo_img" style="margin: 5px 0 0 20px;">
 						<a href="#"><?php the_custom_logo(); ?></a>
 					</div>
 				</div>
 
-				<div class="col-md-10">
+				<div class="col-md-11">
 
                     <div class="menu_bar">
 						<nav role="navigation" class="navbar navbar-default">

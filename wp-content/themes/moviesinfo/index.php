@@ -1,26 +1,29 @@
 <?php get_header(); ?>
 
-<section class="post_blog_bg primary-bg">
+<section class="frontpage-bg">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
 
-				<div class="col-md-8">
+            <div class="col-md-3">
+                <?php dynamic_sidebar( 'main-left-sidebar' ); ?>
+            </div>
 
-                    <?php if ( have_posts() ) : ?>
-                        <?php while( have_posts() ) : the_post();
+            <div class="col-md-6">
 
-		                    the_content();
+                <?php if ( have_posts() ) : ?>
+                    <?php while( have_posts() ) : the_post();
 
-                        endwhile; ?>
-                    <?php endif; ?>
+                        the_content();
 
-				</div>
-
-				<!--Sidebar here-->
-				<?php dynamic_sidebar( 'main-sidebar' ); ?>
+                    endwhile; ?>
+                <?php endif; ?>
 
             </div>
+
+            <div class="col-md-3">
+                <?php get_sidebar( 'main-right' ); ?>
+            </div>
+
 		</div>
 	</div>
 </section>

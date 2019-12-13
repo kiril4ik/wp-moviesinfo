@@ -6,8 +6,8 @@ function moviesinfo_setup() {
 	add_theme_support('tittle-tag', get_template_directory() . "/lang");
 
 	add_theme_support('custom-logo', array(
-		'height' => 50,
-		'width' => 50,
+		'height' => 40,
+		'width' => 40,
 		'flex' => true
 	));
 
@@ -44,10 +44,10 @@ function register_post_types() {
 	register_post_type('movies', array(
 		'label'  => null,
 		'labels' => array(
-			'name'               => esc_html__('Movies'), // основное название для типа записи
-			'singular_name'      => esc_html__('Movie'), // название для одной записи этого типа
+			'name'               => __('Movies'), // основное название для типа записи
+			'singular_name'      => __('Movie'), // название для одной записи этого типа
 		),
-		'description'         => esc_html__('Movies list with detailed description can be fond here'),
+		'description'         => __('Movies list with detailed description can be fond here'),
 		'public'              => true,
 		'show_in_nav_menus'   => true, // зависит от public
 		'show_in_menu'        => true, // показывать ли в меню адмнки
@@ -64,10 +64,10 @@ function register_post_types() {
 	register_post_type('series', array(
 		'label'  => null,
 		'labels' => array(
-			'name'               => esc_html__('TV Series'), // основное название для типа записи
-			'singular_name'      => esc_html__('TV Series'), // название для одной записи этого типа
+			'name'               => __('TV Series'), // основное название для типа записи
+			'singular_name'      => __('TV Series'), // название для одной записи этого типа
 		),
-		'description'         => esc_html__('Here is best TV series category'),
+		'description'         => __('Here is best TV series category'),
 		'public'              => true,
 		'show_in_nav_menus'   => true, // зависит от public
 		'show_in_menu'        => true, // показывать ли в меню адмнки
@@ -84,10 +84,10 @@ function register_post_types() {
 	register_post_type('celebs', array(
 		'label'  => null,
 		'labels' => array(
-			'name'               => esc_html__('Celebrities'), // основное название для типа записи
-			'singular_name'      => esc_html__('Celebrity'), // название для одной записи этого типа
+			'name'               => __('Celebrities'), // основное название для типа записи
+			'singular_name'      => __('Celebrity'), // название для одной записи этого типа
 		),
-		'description'         => esc_html__('The most popular selebrities category'),
+		'description'         => __('The most popular selebrities category'),
 		'public'              => true,
 		'show_in_nav_menus'   => true, // зависит от public
 		'show_in_menu'        => true, // показывать ли в меню адмнки
@@ -104,10 +104,10 @@ function register_post_types() {
 	register_post_type('awards', array(
 		'label'  => null,
 		'labels' => array(
-			'name'               => esc_html__('Awards'), // основное название для типа записи
-			'singular_name'      => esc_html__('Award'), // название для одной записи этого типа
+			'name'               => __('Awards'), // основное название для типа записи
+			'singular_name'      => __('Award'), // название для одной записи этого типа
 		),
-		'description'         => esc_html__('Oskar awards and many others'),
+		'description'         => __('Oskar awards and many others'),
 		'public'              => true,
 		'show_in_nav_menus'   => true, // зависит от public
 		'show_in_menu'        => true, // показывать ли в меню адмнки
@@ -127,9 +127,11 @@ function register_post_types() {
 add_action( 'wp_enqueue_scripts', 'moviesinfo_scripts' );
 function moviesinfo_scripts() {
 	wp_enqueue_style( 'style-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
+	wp_enqueue_style( 'script-main-styles', get_template_directory_uri() . '/css/main.css' );
 
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'script-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js' );
+
 }
 
 //Add settings to Customizer
@@ -138,17 +140,17 @@ function moviesinfo_customize_register( $wp_customize ) {
 
 	//All our sections, settings, and controls will be added here
 	$wp_customize->add_section( 'footer_section' , array(
-		'title'      => esc_html__( 'Footer settings', 'moviesinfo' ),
+		'title'      => __( 'Footer settings', 'moviesinfo' ),
 		'priority'   => 31,
 	) );
 	$wp_customize->add_setting( 'footer_copy' , array(
-		'default'   => esc_html__( 'Copyright 2019', 'moviesinfo'),
+		'default'   => __( 'Copyright 2019', 'moviesinfo'),
 		'transport' => 'refresh',
 	) );
 	$wp_customize->add_control(
 		'footer_copy',
 		array(
-			'label'    => esc_html__('Footer text', 'moviesinfo' ),
+			'label'    => __('Footer text', 'moviesinfo' ),
 			'section'  => 'footer_section',
 			'settings' => 'footer_copy',
 			'type'     => 'textarea',
@@ -159,12 +161,22 @@ function moviesinfo_customize_register( $wp_customize ) {
 
 add_action( 'widgets_init', 'moviesinfo_register_sidebars' );
 function moviesinfo_register_sidebars() {
-	/* Register the 'primary' sidebar. */
 	register_sidebar(
 		array(
-			'id'            => 'main-sidebar',
-			'name'          => esc_html__('Main Sidebar' ),
-			'description'   => esc_html__('The lastest films is here' ),
+			'id'            => 'main-left-sidebar',
+			'name'          => __('Left Sidebar' ),
+			'description'   => __('The lastest films is here' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+	register_sidebar(
+		array(
+			'id'            => 'main-right-sidebar',
+			'name'          => __('Right Sidebar' ),
+			'description'   => __('The lastest films is here' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
@@ -174,12 +186,12 @@ function moviesinfo_register_sidebars() {
 	register_sidebar(
 		array(
 			'id'            => 'footer-sidebar',
-			'name'          => esc_html__('Footer Sidebar' ),
-			'description'   => esc_html__('Info categories' ),
+			'name'          => __('Footer Sidebar' ),
+			'description'   => __('Info categories' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h5 class="widget-title">',
-			'after_title'   => '</h3>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
 		)
 	);
 }
