@@ -1,11 +1,12 @@
 <?php
 
-require_once(ABSPATH."wp-content/themes/moviesinfo/includes/class/Base_Metabox.php");
-require_once(ABSPATH."wp-content/themes/moviesinfo/includes/class/Custom_Metabox.php");
+require_once(ABSPATH."wp-content/themes/moviesinfo/includes/class/Core/Class_Autoloader.php");
+$class_autoloader = new \Core\Class_Autoloader();
 
 $meta_movie_release_year = new \Core\Custom_Metabox( 'movie_release_year', 'Release Year', 'movies' );
 $meta_celebs_birth_year = new \Core\Custom_Metabox( 'celebs_birth_year', 'Birth Year', 'celebs' );
 
+add_action('after_setup_theme', 'moviesinfo_setup');
 function moviesinfo_setup() {
 	load_theme_textdomain('moviesinfo');
 
@@ -41,7 +42,6 @@ function moviesinfo_setup() {
 	);
 
 }
-add_action('after_setup_theme', 'moviesinfo_setup');
 
 //Register new post types: Movies, TV Series, Celebs, Awards
 add_action( 'init', 'register_post_types' );
@@ -161,7 +161,6 @@ function moviesinfo_customize_register( $wp_customize ) {
 		)
 	);
 }
-
 
 add_action( 'widgets_init', 'moviesinfo_register_sidebars' );
 function moviesinfo_register_sidebars() {

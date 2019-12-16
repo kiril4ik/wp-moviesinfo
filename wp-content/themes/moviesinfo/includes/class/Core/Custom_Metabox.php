@@ -8,7 +8,7 @@ namespace Core;
 class Custom_Metabox extends Base_Metabox {
 
 	/**
-	 * Saving field from admin panel to current post meta field
+	 * Saving field from admin panel to current post meta field.
 	 *
 	 * @param integer $postID
 	 * @return null
@@ -24,7 +24,7 @@ class Custom_Metabox extends Base_Metabox {
 	}
 
 	/**
-	 * Rendering input field with existing value to admin panel
+	 * Rendering input field with existing value to admin panel.
 	 *
 	 * @param object $post
 	 * @return null
