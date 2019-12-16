@@ -1,6 +1,3 @@
-<style>
-
-</style>
 
 <footer>
     <div class="container-fluid">
