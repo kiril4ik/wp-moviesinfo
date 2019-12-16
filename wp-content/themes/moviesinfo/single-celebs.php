@@ -12,7 +12,7 @@
 					?>
 
 						<h1><?php the_title(); ?></h1>
-		                <?php if (isset($post->celebs_birth_year)) { ?>
+		                <?php if (isset($post->celebs_birth_year) && $post->celebs_birth_year != "") { ?>
                         <p><b>
 				                <?php $post = get_post();
 				                echo "Birth year: ".$post->celebs_birth_year;

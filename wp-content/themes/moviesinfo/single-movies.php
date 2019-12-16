@@ -12,9 +12,9 @@
 					?>
 						<h1><?php the_title(); ?></h1>
 
-                    <?php if (isset($post->movie_release_year)) { ?>
+                    <?php if (isset($post->movie_release_year) && $post->celebs_birth_year != "") { ?>
                         <p><b>
-                            <?php $post = get_post();
+                            <?php
                             echo "Release year: ".$post->movie_release_year;
                             ?>
                         </b></p>
