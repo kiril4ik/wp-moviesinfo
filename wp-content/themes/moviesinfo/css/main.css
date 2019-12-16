@@ -30,3 +30,7 @@ footer * {
     margin: 10px;
     border-radius: 5px;
 }
+h4.taxonomy-field {
+    color: blue;
+}
+

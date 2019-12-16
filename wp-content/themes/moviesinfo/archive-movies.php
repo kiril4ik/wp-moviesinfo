@@ -16,6 +16,10 @@
 							?>
 
 							<h1><?php the_title(); ?></h1>
+                            <h4 class="taxonomy-field"><?php
+								echo implode (', ',wp_get_post_terms( get_the_ID(), 'movie_genre', array('fields' => 'names')));
+								?>
+                            </h4>
 							<?php the_content();
 
 						endwhile; ?>

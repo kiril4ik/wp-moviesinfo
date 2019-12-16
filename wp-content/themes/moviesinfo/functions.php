@@ -60,7 +60,7 @@ function register_post_types() {
 		'menu_position'       => null,
 		'menu_icon'           => 'dashicons-video-alt',
 		'hierarchical'        => false,
-		'supports'            => [ 'title', 'editor', 'author','thumbnail','custom-fields','comments','revisions','page-attributes' ],
+		'supports'            => [ 'title', 'editor', 'author','thumbnail','comments','revisions','page-attributes' ],
 		'taxonomies'          => [],
 		'has_archive'         => 'movies',
 		'rewrite'             => true,
@@ -80,7 +80,7 @@ function register_post_types() {
 		'menu_position'       => null,
 		'menu_icon'           => 'dashicons-welcome-view-site',
 		'hierarchical'        => false,
-		'supports'            => [ 'title', 'editor', 'author','thumbnail','custom-fields','comments','revisions','page-attributes' ],
+		'supports'            => [ 'title', 'editor', 'author','thumbnail','comments','revisions','page-attributes' ],
 		'taxonomies'          => [],
 		'has_archive'         => 'series',
 		'rewrite'             => true,
@@ -100,7 +100,7 @@ function register_post_types() {
 		'menu_position'       => null,
 		'menu_icon'           => 'dashicons-groups',
 		'hierarchical'        => false,
-		'supports'            => [ 'title', 'editor', 'author','thumbnail','custom-fields','comments','revisions','page-attributes' ],
+		'supports'            => [ 'title', 'editor', 'author','thumbnail','comments','revisions','page-attributes' ],
 		'taxonomies'          => [],
 		'has_archive'         => 'celebs',
 		'rewrite'             => true,
@@ -120,7 +120,7 @@ function register_post_types() {
 		'menu_position'       => null,
 		'menu_icon'           => 'dashicons-awards',
 		'hierarchical'        => false,
-		'supports'            => [ 'title', 'editor', 'author','thumbnail','custom-fields','comments','revisions','page-attributes' ],
+		'supports'            => [ 'title', 'editor', 'author','thumbnail','comments','revisions','page-attributes' ],
 		'taxonomies'          => [],
 		'has_archive'         => 'awards',
 		'rewrite'             => true,
@@ -199,6 +199,47 @@ function moviesinfo_register_sidebars() {
 	);
 }
 
+//Add genre taxonomy for movies
+add_action( 'init', 'moviesinfo_taxonomy_movie_genre' );
+function moviesinfo_taxonomy_movie_genre(){
+	register_taxonomy( 'movie_genre', [ 'movies' ], [
+		'label'                 => '', // определяется параметром $labels->name
+		'labels'                => [
+			'name'              => 'Genres',
+			'singular_name'     => 'Genre'
+		],
+		'description'           => '', // описание таксономии
+		'public'                => true,
 
+		'hierarchical'          => false,
+		'rewrite'               => true,
+		'capabilities'          => array(),
+		'meta_box_cb'           => null, // html метабокса. callback: `post_categories_meta_box` или `post_tags_meta_box`. false — метабокс отключен.
+		'show_admin_column'     => false, // авто-создание колонки таксы в таблице ассоциированного типа записи. (с версии 3.5)
+		'show_in_rest'          => null, // добавить в REST API
+		'rest_base'             => null, // $taxonomy
+	] );
+}
+//Add type taxonomy for awards (eg Oskar, Golden globe...)
+add_action( 'init', 'moviesinfo_taxonomy_awards_type' );
+function moviesinfo_taxonomy_awards_type(){
+	register_taxonomy( 'awards_type', [ 'awards' ], [
+		'label'                 => '', // определяется параметром $labels->name
+		'labels'                => [
+			'name'              => 'Types',
+			'singular_name'     => 'Type'
+		],
+		'description'           => '', // описание таксономии
+		'public'                => true,
+
+		'hierarchical'          => false,
+		'rewrite'               => true,
+		'capabilities'          => array(),
+		'meta_box_cb'           => null, // html метабокса. callback: `post_categories_meta_box` или `post_tags_meta_box`. false — метабокс отключен.
+		'show_admin_column'     => false, // авто-создание колонки таксы в таблице ассоциированного типа записи. (с версии 3.5)
+		'show_in_rest'          => null, // добавить в REST API
+		'rest_base'             => null, // $taxonomy
+	] );
+}
 
 

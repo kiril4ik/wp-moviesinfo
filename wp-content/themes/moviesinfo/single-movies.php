@@ -10,9 +10,12 @@
 					<?php while( have_posts() ) :
                         the_post();
 					?>
-						<h1><?php the_title(); ?></h1>
-
-                    <?php if (isset($post->movie_release_year) && $post->celebs_birth_year != "") { ?>
+					    <h1><?php the_title(); ?></h1>
+                        <h4 class="taxonomy-field"><?php
+                            echo implode (', ',wp_get_post_terms( get_the_ID(), 'movie_genre', array('fields' => 'names')));
+                            ?>
+                        </h4>
+                        <?php if (isset($post->movie_release_year) && $post->movie_release_year != "") { ?>
                         <p><b>
                             <?php
                             echo "Release year: ".$post->movie_release_year;
