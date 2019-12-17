@@ -12,16 +12,9 @@
 						?>
                         <h1><?php the_title(); ?></h1>
                         <h4 class="taxonomy-field"><?php
-							echo implode( ', ', wp_get_post_terms( get_the_ID(), 'movie_genre', array( 'fields' => 'names' ) ) );
+							echo implode( ', ', wp_get_post_terms( get_the_ID(), 'awards_type', array( 'fields' => 'names' ) ) );
 							?>
                         </h4>
-						<?php if ( isset( $post->movie_release_year ) && $post->movie_release_year != "" ) { ?>
-                        <p><b>
-								<?php
-								echo "Release year: " . $post->movie_release_year;
-								?>
-                            </b></p>
-					<?php } ?>
                         <img class="post-image" src="<?php echo the_post_thumbnail_url(); ?>" alt="">
 						<?php the_content();
 
