@@ -6,6 +6,7 @@ namespace Core;
 /*
  * Autoload classes
  */
+
 class Class_Autoloader {
 
 	/**

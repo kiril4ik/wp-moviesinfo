@@ -1,2 +1,2 @@
 <?php
-dynamic_sidebar('main-left-sidebar');
+dynamic_sidebar( 'main-left-sidebar' );

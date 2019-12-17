@@ -1,36 +1,53 @@
 .frontpage-bg {
     min-height: 400px;
 }
+
 footer {
     background-color: black;
     color: lightgrey;
     padding: 20px;
 }
+
 #search-3 #s {
     background-color: black;
     border-radius: 6px;
 }
+
 #search-3 #searchsubmit {
     color: black;
     border-radius: 15px;
 }
+
 footer * {
     display: inline-block;
     text-align: center;
 }
+
 .screen-reader-text {
     display: none;
 }
+
 #search-3 h4 {
     margin-right: 15px;
 }
+
 .post-image {
     max-width: 100%;
-    height: 200px;
+    height: 140px;
     margin: 10px;
     border-radius: 5px;
 }
+
 h4.taxonomy-field {
     color: blue;
+}
+
+.left-img {
+    margin-top: 20px;
+    float: left;
+}
+
+.posts-archive-block h1 {
+    font-size: 20px;
 }
 
