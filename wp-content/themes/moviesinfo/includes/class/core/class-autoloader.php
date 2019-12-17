@@ -53,7 +53,12 @@ class Class_Autoloader {
 	 */
 	public function autoload( $class ) {
 
-		$file = str_replace( "\\", "/", $class ) . '.php';
+		$class = strtolower( $class );
+		$class = str_replace( "_", "-", $class );
+		$class = str_replace( "\\", "/", $class );
+		$arr = explode ( '/', $class );
+		$arr[count($arr)-1] = 'class-' . $arr[count($arr)-1];
+		$file = implode( "/", $arr ) . '.php';
 
 		$this->load_file( $this->include_path . $file );
 
