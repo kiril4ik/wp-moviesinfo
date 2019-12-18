@@ -10,8 +10,8 @@ new \Modules\Enqueue_Scripts_Styles\Enqueue_Scripts_Styles();
 //Register new post types: Movies, TV Series, Celebs, Awards
 new \Modules\Custom_Register_Post_Type\Custom_Register_Post_Type();
 
-new \Core\Custom_Metabox( 'movie_release_year', 'Release Year', 'movies' );
-new \Core\Custom_Metabox( 'celebs_birth_year', 'Birth Year', 'celebs' );
+new \Modules\Metabox\Custom_Metabox( 'movie_release_year', 'Release Year', 'movies' );
+new \Modules\Metabox\Custom_Metabox( 'celebs_birth_year', 'Birth Year', 'celebs' );
 
 //Add genre taxonomy for movies and type taxonomy for awards
 new \Modules\Custom_Register_Taxonomy\Custom_Register_Taxonomy();
@@ -22,4 +22,5 @@ new \Modules\Custom_Register_Sidebar\Custom_Register_Sidebar();
 //Add settings to Customizer
 new \Modules\Customize_Register\Customize_Register();
 
+new \Modules\Shortcode\Shortcode_Top_X_Posts('top_x_posts');
 

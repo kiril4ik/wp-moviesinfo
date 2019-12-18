@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Кирилл
- * Date: 24.02.2018
- * Time: 21:01
- */
 
-namespace Core;
+namespace Modules\Metabox;
 abstract class Base_Metabox {
 	abstract public function save( $postID );
 

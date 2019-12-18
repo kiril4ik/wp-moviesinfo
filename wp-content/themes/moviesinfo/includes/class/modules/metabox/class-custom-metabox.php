@@ -1,6 +1,6 @@
 <?php
 
-namespace Core;
+namespace Modules\Metabox;
 
 /*
  * Class for rendering and saving metabox field. Implementation of save and render method.

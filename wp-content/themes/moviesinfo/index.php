@@ -8,15 +8,11 @@
 				<?php dynamic_sidebar( 'main-left-sidebar' ); ?>
             </div>
 
+
             <div class="col-md-6">
 
-				<?php if ( have_posts() ) : ?>
-					<?php while ( have_posts() ) : the_post();
+                <?php echo do_shortcode( '[top_x_posts posts_num="3" sort_order="ASC"]' ); ?>
 
-						the_content();
-
-					endwhile; ?>
-				<?php endif; ?>
 
             </div>
 

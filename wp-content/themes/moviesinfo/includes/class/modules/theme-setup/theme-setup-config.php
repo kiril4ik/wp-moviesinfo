@@ -11,7 +11,7 @@ return [
 				'flex'   => true
 			]
 		],
-		[ 'post-thumbnails', null ],
+		[ 'post-thumbnails' ],
 		[
 			'html5',
 			[
@@ -35,4 +35,3 @@ return [
 	'load_theme_textdomain'   => 'moviesinfo',
 	'set_post_thumbnail_size' => [ 730, 446 ]
 ];
-set_post_thumbnail_size( 730, 446 );
