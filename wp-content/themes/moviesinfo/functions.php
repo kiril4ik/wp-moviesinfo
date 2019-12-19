@@ -1,6 +1,6 @@
 <?php
 
-require_once(ABSPATH."wp-content/themes/moviesinfo/includes/class/core/class-autoloader.php");
+require_once( ABSPATH . "wp-content/themes/moviesinfo/includes/class/core/class-autoloader.php" );
 $class_autoloader = new \Core\Class_Autoloader();
 
 new \Modules\Theme_Setup\Theme_Setup();
@@ -22,6 +22,7 @@ new \Modules\Custom_Register_Sidebar\Custom_Register_Sidebar();
 //Add settings to Customizer
 new \Modules\Customize_Register\Customize_Register();
 
-new \Modules\Shortcode\Shortcode_Top_X_Posts('top_x_posts');
+new \Modules\Shortcode\Shortcode_Top_X_Posts( 'top_x_posts' );
 
 new \Widgets\Movies_By_Category\Movies_By_Category_Widget();
+

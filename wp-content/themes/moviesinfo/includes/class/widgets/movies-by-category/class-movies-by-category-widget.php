@@ -41,15 +41,20 @@ class Movies_By_Category_Widget extends \WP_Widget {
 			'orderby'        => 'meta_value_num',
 			'order'          => $sort_order,
 			'post_type'      => [ 'movies' ],
-			'tax_query'      => [[
-				'taxonomy' => 'movie_genre',
-				'field'    => 'name',
-				'terms'    => $category,
-				'include_children' => false
-			]]
+			'tax_query'      => [
+				[
+					'taxonomy'         => 'movie_genre',
+					'field'            => 'name',
+					'terms'            => $category,
+					'include_children' => false
+				]
+			]
 		] );
 
 		require( 'widget-template.php' );
+		echo '<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script><script>';
+		require( 'send-request.js' );
+		echo '</script>';
 	}
 
 	/**
