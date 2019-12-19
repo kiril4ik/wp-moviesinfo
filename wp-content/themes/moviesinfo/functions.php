@@ -24,3 +24,4 @@ new \Modules\Customize_Register\Customize_Register();
 
 new \Modules\Shortcode\Shortcode_Top_X_Posts('top_x_posts');
 
+new \Widgets\Movies_By_Category\Movies_By_Category_Widget();
