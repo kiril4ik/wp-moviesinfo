@@ -52,9 +52,9 @@ class Movies_By_Category_Widget extends \WP_Widget {
 		] );
 
 		require( 'widget-template.php' );
-		echo '<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script><script>';
+//		echo '<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script><script>';
 		require( 'send-request.js' );
-		echo '</script>';
+//		echo '</script>';
 	}
 
 	/**
