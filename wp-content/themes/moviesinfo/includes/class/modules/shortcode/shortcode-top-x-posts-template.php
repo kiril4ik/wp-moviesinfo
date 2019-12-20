@@ -1,12 +1,12 @@
-<?php
-	$output = "<h1>Top {$params['posts_num']} posts</h1>";
-	$output .= '<ul class="list-group">';
-foreach ( $posts_array as $post ) {
-	$output .= '<li class="list-group-item">';
-	$output .= "<h3>{$post->post_title}</h3>";
-	$output .= '<p>'.get_the_excerpt($post).'</p>';
-	$output .= "</li>";
-}
-	$output .= '</ul>';
+<?php ob_start(); ?>
+	<h1>Top <?=$params['posts_num']?> posts</h1>
+	<ul class="list-group">
+<?php foreach ( $posts_array as $post ) { ?>
+	<li class="list-group-item">
+	<h3><?=$post->post_title?></h3>
+	<p><?=get_the_excerpt($post)?></p>
+	</li>
+<?php } ?>
+	</ul>
 
-	return $output;
+<?php return ob_get_clean();

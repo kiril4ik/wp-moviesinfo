@@ -20,4 +20,7 @@ foreach ( $posts_array as $post ) { ?>
 	</li>
 <?php }
 echo '</ul>';
+//echo '<script>';
+//require( 'send-request.js' );
+//echo '</script>';
 echo $after_widget;
