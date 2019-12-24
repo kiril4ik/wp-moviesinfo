@@ -19,9 +19,6 @@ class Rest_Api_Favorite_Posts extends \WP_REST_Controller {
 	}
 
 	public function enqueue_scripts() {
- 		wp_enqueue_script( 'script-get-fav-posts', get_template_directory_uri() . '/assets/js/get-fav-posts.js');
-		wp_localize_script( 'script-get-fav-posts', 'fav_posts_settings', ['wp_nonce_field' => wp_create_nonce('get_fav_posts'), 'path_data' => $this->path_data] );
-
 		wp_enqueue_script( 'script-modify-fav-posts', get_template_directory_uri() . '/assets/js/modify-fav-posts.js');
 		wp_localize_script( 'script-modify-fav-posts', 'fav_posts_settings', ['wp_nonce_field' => wp_create_nonce('wp_rest'), 'path_data' => $this->path_data] );
 	}
