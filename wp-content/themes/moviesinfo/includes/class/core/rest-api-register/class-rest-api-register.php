@@ -13,7 +13,7 @@ class Rest_Api_Register extends \WP_REST_Controller {
 			'namespace'          => 'moviesinfo',
 			'route'              => '/register'
 		];
-		add_action( 'wp_enqueue_scripts', [$this, 'localize_script'], 99 );
+		add_action( 'wp_enqueue_scripts', [$this, 'localize_script']);
 	}
 
 	public function localize_script() {

@@ -13,7 +13,6 @@
 
                 <?php echo do_shortcode( '[top_x_posts posts_num="3" sort_order="ASC"]' ); ?>
 
-
             </div>
 
             <div class="col-md-3">

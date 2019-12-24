@@ -5,8 +5,8 @@
 	<li class="list-group-item">
 	<h3><?=$post->post_title?></h3>
 	<p><?=get_the_excerpt($post)?></p>
+    <?php echo do_shortcode( '[fav_post post_id="'. $post->ID .'" ]' ); ?>
 	</li>
 <?php } ?>
 	</ul>
-
 <?php return ob_get_clean();

@@ -23,8 +23,12 @@ new \Modules\Custom_Register_Sidebar\Custom_Register_Sidebar();
 new \Modules\Customize_Register\Customize_Register();
 
 new \Modules\Shortcode\Shortcode_Top_X_Posts( 'top_x_posts' );
+new \Modules\Shortcode\Shortcode_Favorite_Post('fav_post');
 
 new \Widgets\Movies_By_Category\Movies_By_Category_Widget();
 
 new \Core\Rest_Api_Register\Rest_Api_Register();
 
+new \Core\Rest_Api_Favorite_Posts\Rest_Api_Favorite_Posts();
+
+$fav_posts = new \Modules\Usermeta\Fav_Posts_Usermeta();

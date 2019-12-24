@@ -19,6 +19,6 @@ class Shortcode_Top_X_Posts extends Basic_Shortcode {
 			"post_type"      => [ 'movies', 'series', 'celebs', 'awards' ]
 		] );
 
-		return require_once( 'shortcode-top-x-posts-template.php' );
+		return require( 'shortcode-top-x-posts-template.php' );
 	}
 }
