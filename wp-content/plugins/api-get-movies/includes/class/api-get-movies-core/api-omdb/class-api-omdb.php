@@ -53,9 +53,6 @@ class Api_Omdb {
 	 * @return array
 	 */
 	private function getData() {
-		if ( ! function_exists( 'curl_version' ) ) {
-			exit ( "Enable cURL in PHP" );
-		}
 		$query_str = http_build_query( $this->post_fields );
 		$ch        = curl_init( "http://www.omdbapi.com/?$query_str" );
 		curl_setopt( $ch, CURLOPT_HEADER, 0 );

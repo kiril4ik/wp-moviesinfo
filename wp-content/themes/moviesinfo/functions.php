@@ -3,6 +3,9 @@
 require_once( ABSPATH . "wp-content/themes/moviesinfo/includes/class/core/class-autoloader.php" );
 $class_autoloader = new \Core\Class_Autoloader();
 
+new \Modules\Custom_Page\Custom_Page();
+new \Modules\Custom_Rewrite_Rule\Custom_Rewrite_Rule();
+
 new \Modules\Theme_Setup\Theme_Setup();
 
 new \Modules\Enqueue_Scripts_Styles\Enqueue_Scripts_Styles();
