@@ -10,9 +10,17 @@
 
                 <div class="col-md-6 posts-archive-block">
 
+
 					<?php if ( have_posts() ) : ?>
 						<?php while ( have_posts() ) :
 							the_post();
+						    $tax_filter = get_query_var( 'taxonomy_filter' );
+							if ( isset($tax_filter) && $tax_filter != '' && !in_array(
+								get_query_var( 'taxonomy_filter' ),
+								wp_get_post_terms( get_the_ID(), 'movie_genre', array( 'fields' => 'names' ) )
+							    ) ) {
+								continue;
+							}
 							?>
                             <div class="post-block">
                                 <p class="left-img">

@@ -11,7 +11,7 @@
 
             <div class="col-md-6">
 
-                <?php echo do_shortcode( '[top_x_posts posts_num="3" sort_order="ASC"]' ); ?>
+                <?php echo do_shortcode( '[top_x_posts posts_num="3" sort_order="DESC"]' ); ?>
 
             </div>
 
